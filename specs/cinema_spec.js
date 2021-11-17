@@ -28,12 +28,48 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, films);
   });
 
-  it('should be able to get a list of film titles');
-  it('should be able to find a film by title');
-  it('should be able to filter films by genre');
-  it('should be able to check whether there are some films from a particular year');
-  it('should be able to check whether there are no films from a particular year');
-  it('should be able to check whether all films are over a particular length');
-  it('should be able to calculate total running time of all films');
+  it('should be able to get a list of film titles', function () {
+    const filmTitles = ['Moonlight', 'Blade Runner 2049', 'Dunkirk', 'Black Panther', 'T2 Trainspotting'];
+    actual = cinema.filmsByTitle();
+    assert.deepStrictEqual(actual, filmTitles);
+  });
+
+  it('should be able to find a film by title', function () {
+    actual = cinema.findFilmByTitle('Moonlight');
+    assert.strictEqual(actual, moonlight);
+  });
+
+  it('should be able to filter films by genre', function () {
+    actual = cinema.filterByProperty('genre', 'drama');
+    assert.deepStrictEqual(actual, [moonlight, trainspotting]);
+  });
+
+  it('should be able to check whether there are some films from a particular year', function () {
+    actual = cinema.checkForYear(2017);
+    assert.strictEqual(actual, true);
+  });
+
+
+  it('should be able to check whether there are no films from a particular year', function () {
+    actual = cinema.checkNoFilmsOfYear(2015);
+    assert.strictEqual(actual, true);
+  });
+
+
+  it('should be able to check whether all films are over a particular length', function () {
+    actual = cinema.checkAllFilmsOverLength(90);
+    assert.strictEqual(actual, true);
+  });
+
+
+  it('should be able to calculate total running time of all films', function () {
+    actual = cinema.totalRunningTime();
+    assert.strictEqual(actual, 622)
+  });
+
+  it('should be able to filter by any given property', function() {
+    actual = cinema.filterByProperty('year', 2017);
+    assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting]);
+  })
 
 });

@@ -1,7 +1,6 @@
 {
   "name": "lab_enumeration_callbacks_films_end",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha specs"
@@ -10,6 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^5.1.1"
-  }
+    "mocha": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heathercking/week06_day3__jsCallbacks_filmLab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heathercking/week06_day3__jsCallbacks_filmLab/issues"
+  },
+  "homepage": "https://github.com/heathercking/week06_day3__jsCallbacks_filmLab#readme",
+  "description": ""
 }
